@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.M7019E_MiniProject">
+        <!-- FIXME: TA EV BORT android:parentActivityName=".MainActivity" -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

@@ -3,26 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/HomepageFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="ltu.m7019e.m7019e_miniproject.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/HomepageFragment"
+        android:name="ltu.m7019e.m7019e_miniproject.HomepageFragment"
+        android:label="@string/homepage_fragment_label"
+        tools:layout="@layout/fragment_homepage">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_HomepageFragment_to_CharacterCreationFragment"
+            app:destination="@id/CharacterCreationFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="ltu.m7019e.m7019e_miniproject.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/CharacterCreationFragment"
+        android:name="ltu.m7019e.m7019e_miniproject.CharacterCreationFragment"
+        android:label="@string/character_creation_fragment_label"
+        tools:layout="@layout/fragment_character_creation">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_CharacterCreationFragment_to_HomepageFragment"
+            app:destination="@id/HomepageFragment"
+            app:popUpTo="@id/HomepageFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

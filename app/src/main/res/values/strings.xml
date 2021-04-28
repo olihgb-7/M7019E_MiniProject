@@ -1,12 +1,44 @@
 <resources>
-    <string name="app_name">M7019E_MiniProject</string>
+    <!--<string name="app_name">M7019E_MiniProject</string>-->
+    <string name="app_name">The D&amp;D App</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="homepage_fragment_label">Homepage Fragment</string>
+    <string name="character_creation_fragment_label">Character Creation Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="character_create_string">Create new character</string>
+    <string name="character_selection_string">Select a character</string>
+    <string name="monster_manual_string">Monster manual</string>
+    <string name="charcter_creation_name_string">Choose a character name</string>
+    <string name="cancel_string">Cancel</string>
+    <string name="create_string">Create</string>
+
+    <string-array name="dnd_class_array">
+        <item>Barbarian</item>
+        <item>Bard</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Fighter</item>
+        <item>Monk</item>
+        <item>Paladin</item>
+        <item>Ranger</item>
+        <item>Rogue</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+        <item>Wizard</item>
+    </string-array>
+
+    <string-array name="dnd_race_array">
+        <item>Dragonborn</item>
+        <item>Dwarf</item>
+        <item>Elf</item>
+        <item>Gnome</item>
+        <item>Half-Elf</item>
+        <item>Half-Orc</item>
+        <item>Halfling</item>
+        <item>Human</item>
+        <item>Tiefling</item>
+    </string-array>
 </resources>
