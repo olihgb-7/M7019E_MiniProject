@@ -30,35 +30,241 @@
                     android:id="@+id/character_creation_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:ems="10"
-                    android:hint="@string/character_create_string"
+                    android:layout_marginTop="32dp"
+                    android:autofillHints="@string/character_create_string"
+                    android:hint="@string/character_creation_name_hint"
                     android:inputType="textPersonName"
                     android:textAlignment="center"
+                    android:textColor="@color/dnd_red"
+                    android:textColorHint="@color/dnd_red"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Spinner
-                    android:id="@+id/character_creation_class"
+                <TextView
+                    android:id="@+id/character_creation_race_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:entries="@array/dnd_class_array"
-                    app:layout_constraintEnd_toStartOf="@+id/character_creation_race"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/class_hint"
+                    android:textSize="18sp"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@+id/character_creation_name"
                     app:layout_constraintTop_toBottomOf="@+id/character_creation_name" />
 
                 <Spinner
                     android:id="@+id/character_creation_race"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:entries="@array/dnd_race_array"
+                    android:spinnerMode="dialog"
+                    app:layout_constraintBottom_toBottomOf="@+id/character_creation_race_text"
+                    app:layout_constraintStart_toEndOf="@+id/character_creation_race_text"
+                    app:layout_constraintTop_toTopOf="@+id/character_creation_race_text" />
+
+                <TextView
+                    android:id="@+id/character_creation_class_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/race_hint"
+                    android:textSize="18sp"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@+id/character_creation_race_text"
+                    app:layout_constraintTop_toBottomOf="@+id/character_creation_race_text" />
+
+                <Spinner
+                    android:id="@+id/character_creation_class"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dnd_class_array"
+                    android:spinnerMode="dialog"
+                    app:layout_constraintBottom_toBottomOf="@+id/character_creation_class_text"
+                    app:layout_constraintStart_toStartOf="@+id/character_creation_race"
+                    app:layout_constraintTop_toTopOf="@+id/character_creation_class_text" />
+
+                <TextView
+                    android:id="@+id/character_creation_ability_score_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/ability_scores_hint"
+                    android:textColor="@color/dnd_red"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/character_creation_class" />
+
+                <EditText
+                    android:id="@+id/character_creation_str"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="@string/str_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@+id/character_creation_dex"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/character_creation_ability_score_text" />
+
+                <EditText
+                    android:id="@+id/character_creation_dex"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="@string/dex_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@+id/character_creation_con"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/character_creation_str"
+                    app:layout_constraintTop_toTopOf="@+id/character_creation_str" />
+
+                <EditText
+                    android:id="@+id/character_creation_con"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="@string/con_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/character_creation_class"
-                    app:layout_constraintTop_toTopOf="@+id/character_creation_class" />
+                    app:layout_constraintStart_toEndOf="@+id/character_creation_dex"
+                    app:layout_constraintTop_toTopOf="@+id/character_creation_dex" />
+
+                <EditText
+                    android:id="@+id/character_creation_int"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:hint="@string/int_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@+id/character_creation_wis"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/character_creation_str" />
+
+                <EditText
+                    android:id="@+id/character_creation_wis"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="@string/wis_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@+id/character_creation_cha"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/character_creation_int"
+                    app:layout_constraintTop_toTopOf="@+id/character_creation_int" />
+
+                <EditText
+                    android:id="@+id/character_creation_cha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="@string/cha_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/character_creation_wis"
+                    app:layout_constraintTop_toTopOf="@+id/character_creation_wis" />
+
+                <TextView
+                    android:id="@+id/character_creation_attribute_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/character_attributes_hint"
+                    android:textColor="@color/dnd_red"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/character_creation_wis" />
+
+                <EditText
+                    android:id="@+id/character_creation_hp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:ems="10"
+                    android:hint="@string/hp_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    app:layout_constraintEnd_toStartOf="@+id/character_creation_ac"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/character_creation_attribute_text" />
+
+                <EditText
+                    android:id="@+id/character_creation_ac"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:ems="10"
+                    android:hint="@string/ac_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/character_creation_hp"
+                    app:layout_constraintTop_toTopOf="@+id/character_creation_hp" />
+
+                <EditText
+                    android:id="@+id/character_creation_initiative"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:ems="10"
+                    android:hint="@string/initiative_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    app:layout_constraintEnd_toStartOf="@+id/character_creation_speed"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/character_creation_hp" />
+
+                <EditText
+                    android:id="@+id/character_creation_speed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:ems="10"
+                    android:hint="@string/speed_hint"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/character_creation_initiative"
+                    app:layout_constraintTop_toTopOf="@+id/character_creation_initiative" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

@@ -8,13 +8,29 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <!-- fragment_homepage -->
     <string name="character_create_string">Create new character</string>
     <string name="character_selection_string">Select a character</string>
     <string name="monster_manual_string">Monster manual</string>
-    <string name="charcter_creation_name_string">Choose a character name</string>
+
+    <!-- fragment_character_creation -->
+    <string name="character_creation_name_hint">Choose a character name</string>
     <string name="cancel_string">Cancel</string>
     <string name="create_string">Create</string>
-
+    <string name="class_hint">Class: </string>
+    <string name="race_hint">Race: </string>
+    <string name="str_hint">STR</string>
+    <string name="dex_hint">DEX</string>
+    <string name="con_hint">CON</string>
+    <string name="int_hint">INT</string>
+    <string name="wis_hint">WIS</string>
+    <string name="cha_hint">CHA</string>
+    <string name="ability_scores_hint">Ability scores</string>
+    <string name="character_attributes_hint">Character attributes</string>
+    <string name="hp_hint">HP</string>
+    <string name="ac_hint">AC</string>
+    <string name="initiative_hint">Initiative</string>
+    <string name="speed_hint">Speed</string>
     <string-array name="dnd_class_array">
         <item>Barbarian</item>
         <item>Bard</item>
@@ -29,7 +45,6 @@
         <item>Warlock</item>
         <item>Wizard</item>
     </string-array>
-
     <string-array name="dnd_race_array">
         <item>Dragonborn</item>
         <item>Dwarf</item>
