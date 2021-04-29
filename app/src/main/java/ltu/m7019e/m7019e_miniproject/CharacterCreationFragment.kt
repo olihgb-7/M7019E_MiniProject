@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Spinner
@@ -57,6 +58,22 @@ class CharacterCreationFragment : Fragment() {
             Log.i("ac", binding.characterCreationAc.text.toString())
             Log.i("initiative", binding.characterCreationInitiative.text.toString())
             Log.i("speed", binding.characterCreationSpeed.text.toString())
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val activity = activity as MainActivity?
+        activity?.showUpButton()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.getItemId()) {
+            android.R.id.home -> {
+                (activity as MainActivity?)!!.onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
