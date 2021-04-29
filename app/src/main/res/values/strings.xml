@@ -18,16 +18,16 @@
     <string name="create_string">Create</string>
     <string name="class_hint">Class: </string>
     <string name="race_hint">Race: </string>
-    <string name="str_hint">STR</string>
-    <string name="dex_hint">DEX</string>
-    <string name="con_hint">CON</string>
-    <string name="int_hint">INT</string>
-    <string name="wis_hint">WIS</string>
-    <string name="cha_hint">CHA</string>
+    <string name="strength_hint">STR</string>
+    <string name="dexterity_hint">DEX</string>
+    <string name="constitution_hint">CON</string>
+    <string name="intelligence_hint">INT</string>
+    <string name="wisdom_hint">WIS</string>
+    <string name="charisma_hint">CHA</string>
     <string name="ability_scores_hint">Ability scores</string>
     <string name="character_attributes_hint">Character attributes</string>
-    <string name="hp_hint">HP</string>
-    <string name="ac_hint">AC</string>
+    <string name="health_points_hint">HP</string>
+    <string name="armour_class_hint">AC</string>
     <string name="initiative_hint">Initiative</string>
     <string name="speed_hint">Speed</string>
     <string-array name="dnd_class_array">
@@ -57,4 +57,6 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="character_name">Character Name</string>
+    <string name="temp_int">10</string>
 </resources>

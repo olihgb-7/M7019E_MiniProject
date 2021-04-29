@@ -40,5 +40,22 @@
             app:destination="@id/homepageFragment"
             app:popUpTo="@id/homepageFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_characterSelectionFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="ltu.m7019e.m7019e_miniproject.CharacterDetailFragment"
+        android:label="CharacterDetailFragment"
+        tools:layout="@layout/fragment_character_detail">
+        <argument
+            android:name="character"
+            app:argType="ltu.m7019e.m7019e_miniproject.model.Character" />
+        <action
+            android:id="@+id/action_characterDetailFragment_to_characterSelectionFragment"
+            app:destination="@id/characterSelectionFragment"
+            app:popUpTo="@id/homepageFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>
