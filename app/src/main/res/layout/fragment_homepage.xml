@@ -37,13 +37,9 @@
 
         <Button
             android:id="@+id/character_selection_button"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/DnD_TextButton"
             android:drawableTop="@drawable/ic_baseline_menu_40"
-            android:drawableTint="@color/dnd_red"
             android:text="@string/character_selection_string"
-            android:textColor="@color/dnd_red"
             app:layout_constraintBottom_toTopOf="@+id/monster_manual_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -52,14 +48,10 @@
 
         <Button
             android:id="@+id/monster_manual_button"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/DnD_TextButton"
             android:layout_marginTop="24dp"
             android:drawableTop="@drawable/beholder"
-            android:drawableTint="@color/dnd_red"
             android:text="@string/monster_manual_string"
-            android:textColor="@color/dnd_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,15 +59,11 @@
 
         <Button
             android:id="@+id/character_create_button"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/DnD_TextButton"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="24dp"
             android:drawableTop="@drawable/ic_baseline_add_circle_outline_40"
-            android:drawableTint="@color/dnd_red"
             android:text="@string/character_create_string"
-            android:textColor="@color/dnd_red"
             app:layout_constraintBottom_toTopOf="@+id/character_selection_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

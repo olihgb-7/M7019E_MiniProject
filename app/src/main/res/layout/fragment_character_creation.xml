@@ -13,7 +13,7 @@
         tools:context=".CharacterCreationFragment">
 
         <ScrollView
-            android:id="@+id/scrollView"
+            android:id="@+id/character_creation_sv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="16dp"
@@ -281,12 +281,9 @@
 
         <Button
             android:id="@+id/character_creation_cancel"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/DnD_OutlineButton"
             android:layout_marginBottom="16dp"
             android:text="@string/cancel_string"
-            android:textColor="@color/dnd_red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/character_creation_create"
             app:layout_constraintHorizontal_bias="0.5"
@@ -294,11 +291,8 @@
 
         <Button
             android:id="@+id/character_creation_create"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/DnD_OutlineButton"
             android:text="@string/create_string"
-            android:textColor="@color/dnd_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/character_creation_cancel"

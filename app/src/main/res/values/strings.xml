@@ -5,8 +5,7 @@
     <!-- Strings used for fragments for navigation -->
     <string name="homepage_fragment_label">Homepage Fragment</string>
     <string name="character_creation_fragment_label">Character Creation Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="back_label">Back</string>
 
     <!-- fragment_homepage -->
     <string name="character_create_string">Create new character</string>

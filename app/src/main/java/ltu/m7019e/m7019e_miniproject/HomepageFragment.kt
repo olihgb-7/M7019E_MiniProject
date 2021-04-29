@@ -37,10 +37,4 @@ class HomepageFragment : Fragment() {
             findNavController().navigate(HomepageFragmentDirections.actionHomepageFragmentToCharacterSelectionFragment())
         }
     }
-
-    override fun onResume() {
-        super.onResume()
-        val activity = activity as MainActivity?
-        activity?.hideUpButton()
-    }
 }

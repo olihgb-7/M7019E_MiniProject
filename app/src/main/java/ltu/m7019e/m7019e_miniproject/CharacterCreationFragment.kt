@@ -60,20 +60,4 @@ class CharacterCreationFragment : Fragment() {
             Log.i("speed", binding.characterCreationSpeed.text.toString())
         }
     }
-
-    override fun onResume() {
-        super.onResume()
-        val activity = activity as MainActivity?
-        activity?.showUpButton()
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.getItemId()) {
-            android.R.id.home -> {
-                (activity as MainActivity?)!!.onBackPressed()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
 }
