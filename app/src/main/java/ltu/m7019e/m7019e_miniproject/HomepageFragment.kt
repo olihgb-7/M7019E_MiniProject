@@ -32,5 +32,9 @@ class HomepageFragment : Fragment() {
         binding.characterCreateButton.setOnClickListener {
             findNavController().navigate(HomepageFragmentDirections.actionHomepageFragmentToCharacterCreationFragment())
         }
+
+        binding.characterSelectionButton.setOnClickListener {
+            findNavController().navigate(HomepageFragmentDirections.actionHomepageFragmentToCharacterSelectionFragment())
+        }
     }
 }
