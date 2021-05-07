@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewmodel"
+            type="ltu.m7019e.m7019e_miniproject.viewmodel.CharacterCreationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -228,6 +230,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/character_creation_cancel"
-            app:layout_constraintTop_toTopOf="@+id/character_creation_cancel" />
+            app:layout_constraintTop_toTopOf="@+id/character_creation_cancel"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
