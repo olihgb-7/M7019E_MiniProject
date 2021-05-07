@@ -72,7 +72,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/character_detail_dexterity_label"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_div1" />
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_div1"
+            />
 
         <TextView
             android:id="@+id/character_detail_strength"
@@ -80,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/temp_int"
+            android:text="@{Integer.toString(character.strength)}"
             app:layout_constraintEnd_toEndOf="@+id/character_detail_strength_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_strength_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_strength_label" />
@@ -102,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/temp_int"
+            android:text="@{Integer.toString(character.dexterity)}"
             app:layout_constraintEnd_toEndOf="@+id/character_detail_dexterity_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_dexterity_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_dexterity_label" />
@@ -124,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/temp_int"
+            android:text="@{Integer.toString(character.constitution)}"
             app:layout_constraintEnd_toEndOf="@+id/character_detail_constitution_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_constitution_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_constitution_label" />
@@ -147,7 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/temp_int"
+            android:text="@{Integer.toString(character.intelligence)}"
             app:layout_constraintEnd_toEndOf="@+id/character_detail_intelligence_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_intelligence_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_intelligence_label" />
@@ -169,7 +170,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/temp_int"
+            android:text="@{Integer.toString(character.wisdom)}"
             app:layout_constraintEnd_toEndOf="@+id/character_detail_wisdom_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_wisdom_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_wisdom_label" />
@@ -191,7 +192,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/temp_int"
+            android:text="@{Integer.toString(character.charisma)}"
             app:layout_constraintEnd_toEndOf="@+id/character_detail_charisma_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_charisma_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_charisma_label" />
@@ -228,7 +229,7 @@
             app:layout_constraintEnd_toEndOf="@+id/character_detail_health_points_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_health_points_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_health_points_label"
-            tools:text="@string/temp_int" />
+            android:text="@{Integer.toString(character.healthPoints)}" />
 
         <TextView
             android:id="@+id/character_detail_armour_class_label"
@@ -251,7 +252,7 @@
             app:layout_constraintEnd_toEndOf="@+id/character_detail_armour_class_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_armour_class_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_armour_class_label"
-            tools:text="@string/temp_int" />
+            android:text="@{Integer.toString(character.armourClass)}" />
 
         <TextView
             android:id="@+id/character_detail_initiative_label"
@@ -274,7 +275,7 @@
             app:layout_constraintEnd_toEndOf="@+id/character_detail_initiative_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_initiative_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_initiative_label"
-            tools:text="@string/temp_int" />
+            android:text="@{Integer.toString(character.initiative)}" />
 
         <TextView
             android:id="@+id/character_detail_speed_label"
@@ -297,7 +298,7 @@
             app:layout_constraintEnd_toEndOf="@+id/character_detail_speed_label"
             app:layout_constraintStart_toStartOf="@+id/character_detail_speed_label"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_speed_label"
-            tools:text="@string/temp_int" />
+            android:text="@{Integer.toString(character.speed)}" />
 
         <Button
             android:id="@+id/character_detail_back"

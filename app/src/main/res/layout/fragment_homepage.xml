@@ -40,14 +40,14 @@
             style="@style/DnD_textButton"
             android:drawableTop="@drawable/ic_baseline_menu_40"
             android:text="@string/character_selection_string"
-            app:layout_constraintBottom_toTopOf="@+id/monster_manual_button"
+            app:layout_constraintBottom_toTopOf="@+id/monster_selection_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/character_create_button" />
 
         <Button
-            android:id="@+id/monster_manual_button"
+            android:id="@+id/monster_selection_button"
             style="@style/DnD_textButton"
             android:layout_marginTop="24dp"
             android:drawableTop="@drawable/beholder"
