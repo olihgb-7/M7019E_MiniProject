@@ -1,9 +1,7 @@
 package ltu.m7019e.m7019e_miniproject
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -12,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabase
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
-import ltu.m7019e.m7019e_miniproject.database.Characters
 import ltu.m7019e.m7019e_miniproject.databinding.CharacterSelectionItemBinding
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentCharacterSelectionBinding
 import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterSelectionViewModel

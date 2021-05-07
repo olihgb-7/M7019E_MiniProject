@@ -24,7 +24,7 @@ abstract class CharacterDatabase : RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         CharacterDatabase::class.java,
-                        "saved_movie_database"
+                        "saved_characters_database"
                     )
                         .fallbackToDestructiveMigration()
                         .build()
