@@ -8,9 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentHomepageBinding
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class HomepageFragment : Fragment() {
 
     private var _binding: FragmentHomepageBinding? = null
@@ -35,6 +32,10 @@ class HomepageFragment : Fragment() {
 
         binding.characterSelectionButton.setOnClickListener {
             findNavController().navigate(HomepageFragmentDirections.actionHomepageFragmentToCharacterSelectionFragment())
+        }
+
+        binding.monsterSelectionButton.setOnClickListener {
+            findNavController().navigate(HomepageFragmentDirections.actionHomepageFragmentToMonsterSelectionFragment())
         }
     }
 }

@@ -11,9 +11,6 @@ import android.widget.Spinner
 import androidx.navigation.fragment.findNavController
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentCharacterCreationBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class CharacterCreationFragment : Fragment() {
 
     private var _binding: FragmentCharacterCreationBinding? = null
@@ -47,17 +44,19 @@ class CharacterCreationFragment : Fragment() {
             Log.i("race", raceSpinner?.selectedItem.toString())
             Log.i("class", classSpinner?.selectedItem.toString())
 
-            Log.i("str", binding.characterCreationStr.text.toString())
-            Log.i("dex", binding.characterCreationDex.text.toString())
-            Log.i("con", binding.characterCreationCon.text.toString())
-            Log.i("int", binding.characterCreationInt.text.toString())
-            Log.i("wis", binding.characterCreationWis.text.toString())
-            Log.i("cha", binding.characterCreationInt.text.toString())
+            Log.i("str", binding.characterCreationStrength.text.toString())
+            Log.i("dex", binding.characterCreationDexterity.text.toString())
+            Log.i("con", binding.characterCreationConstitution.text.toString())
+            Log.i("int", binding.characterCreationIntelligence.text.toString())
+            Log.i("wis", binding.characterCreationWisdom.text.toString())
+            Log.i("cha", binding.characterCreationCharisma.text.toString())
 
-            Log.i("hp", binding.characterCreationHp.text.toString())
-            Log.i("ac", binding.characterCreationAc.text.toString())
+            Log.i("hp", binding.characterCreationHealthPoints.text.toString())
+            Log.i("ac", binding.characterCreationArmourClass.text.toString())
             Log.i("initiative", binding.characterCreationInitiative.text.toString())
             Log.i("speed", binding.characterCreationSpeed.text.toString())
+
+
         }
     }
 }

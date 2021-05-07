@@ -16,41 +16,39 @@
 
         <TextView
             android:id="@+id/character_selection_name"
+            style="@style/DnD_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="@{character.name}"
-            android:textColor="@color/dnd_red"
-            android:textSize="22sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/chevron_right"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Character Name" />
+            tools:text="@string/character_name" />
 
         <TextView
             android:id="@+id/character_selection_class"
+            style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{character.dndClass}"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/character_selection_name"
             app:layout_constraintTop_toBottomOf="@+id/character_selection_name"
-            tools:text="Class" />
+            tools:text="@string/class_hint" />
 
         <TextView
             android:id="@+id/character_selection_race"
+            style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{character.race}"
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/character_selection_class"
             app:layout_constraintTop_toBottomOf="@+id/character_selection_class"
-            tools:text="Race" />
+            tools:text="@string/race_hint" />
 
         <ImageView
             android:id="@+id/chevron_right"

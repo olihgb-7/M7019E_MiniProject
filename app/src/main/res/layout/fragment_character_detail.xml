@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="character"
+            type="ltu.m7019e.m7019e_miniproject.model.Character" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CharacterDetailFragment">
+
+        <TextView
+            android:id="@+id/character_detail_name"
+            style="@style/DnD_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/character_name"
+            android:text="@{character.name}"/>
+
+        <TextView
+            android:id="@+id/character_detail_class"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_name"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_name"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_name"
+            tools:text="@string/class_hint"
+            android:text="@{character.dndClass}" />
+
+        <TextView
+            android:id="@+id/character_detail_race"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_class"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_class"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_class"
+            tools:text="@string/race_hint"
+            android:text="@{character.race}"/>
+
+        <View
+            android:id="@+id/character_detail_div1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_race" />
+
+        <TextView
+            android:id="@+id/character_detail_strength_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/strength_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/character_detail_dexterity_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_div1"
+            />
+
+        <TextView
+            android:id="@+id/character_detail_strength"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{Integer.toString(character.strength)}"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_strength_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_strength_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_strength_label" />
+
+        <TextView
+            android:id="@+id/character_detail_dexterity_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dexterity_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/character_detail_constitution_label"
+            app:layout_constraintStart_toEndOf="@+id/character_detail_strength_label"
+            app:layout_constraintTop_toTopOf="@+id/character_detail_strength_label" />
+
+        <TextView
+            android:id="@+id/character_detail_dexterity"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{Integer.toString(character.dexterity)}"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_dexterity_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_dexterity_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_dexterity_label" />
+
+        <TextView
+            android:id="@+id/character_detail_constitution_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/constitution_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/character_detail_dexterity_label"
+            app:layout_constraintTop_toTopOf="@+id/character_detail_dexterity_label" />
+
+        <TextView
+            android:id="@+id/character_detail_constitution"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{Integer.toString(character.constitution)}"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_constitution_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_constitution_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_constitution_label" />
+
+        <TextView
+            android:id="@+id/character_detail_intelligence_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/intelligence_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_strength_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_strength_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_strength" />
+
+        <TextView
+            android:id="@+id/character_detail_intelligence"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{Integer.toString(character.intelligence)}"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_intelligence_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_intelligence_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_intelligence_label" />
+
+        <TextView
+            android:id="@+id/character_detail_wisdom_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wisdom_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_dexterity_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_dexterity_label"
+            app:layout_constraintTop_toTopOf="@+id/character_detail_intelligence_label" />
+
+        <TextView
+            android:id="@+id/character_detail_wisdom"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{Integer.toString(character.wisdom)}"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_wisdom_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_wisdom_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_wisdom_label" />
+
+        <TextView
+            android:id="@+id/character_detail_charisma_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/charisma_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_constitution_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_constitution_label"
+            app:layout_constraintTop_toTopOf="@+id/character_detail_wisdom_label" />
+
+        <TextView
+            android:id="@+id/character_detail_charisma"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{Integer.toString(character.charisma)}"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_charisma_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_charisma_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_charisma_label" />
+
+        <View
+            android:id="@+id/character_detail_div2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_wisdom" />
+
+        <TextView
+            android:id="@+id/character_detail_health_points_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/health_points_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/character_detail_armour_class_label"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_div2" />
+
+        <TextView
+            android:id="@+id/character_detail_healt_points"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_health_points_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_health_points_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_health_points_label"
+            android:text="@{Integer.toString(character.healthPoints)}" />
+
+        <TextView
+            android:id="@+id/character_detail_armour_class_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/armour_class_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/character_detail_health_points_label"
+            app:layout_constraintTop_toTopOf="@+id/character_detail_health_points_label" />
+
+        <TextView
+            android:id="@+id/character_detail_armour_class"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_armour_class_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_armour_class_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_armour_class_label"
+            android:text="@{Integer.toString(character.armourClass)}" />
+
+        <TextView
+            android:id="@+id/character_detail_initiative_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/initiative_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_health_points_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_health_points_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_healt_points" />
+
+        <TextView
+            android:id="@+id/character_detail_initiative"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_initiative_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_initiative_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_initiative_label"
+            android:text="@{Integer.toString(character.initiative)}" />
+
+        <TextView
+            android:id="@+id/character_detail_speed_label"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/speed_hint"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_armour_class_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_armour_class_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_armour_class" />
+
+        <TextView
+            android:id="@+id/character_detail_speed"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_speed_label"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_speed_label"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_speed_label"
+            android:text="@{Integer.toString(character.speed)}" />
+
+        <Button
+            android:id="@+id/character_detail_back"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:icon="@drawable/ic_baseline_arrow_back_40"
+            app:iconGravity="textStart"
+            app:iconTint="@color/dnd_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

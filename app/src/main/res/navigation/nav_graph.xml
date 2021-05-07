@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_homepageFragment_to_characterSelectionFragment"
             app:destination="@id/characterSelectionFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_monsterSelectionFragment"
+            app:destination="@id/monsterSelectionFragment" />
     </fragment>
     <fragment
         android:id="@+id/characterCreationFragment"
@@ -37,6 +40,34 @@
         tools:layout="@layout/fragment_character_selection">
         <action
             android:id="@+id/action_characterSelectionFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment"
+            app:popUpTo="@id/homepageFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_characterSelectionFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="ltu.m7019e.m7019e_miniproject.CharacterDetailFragment"
+        android:label="CharacterDetailFragment"
+        tools:layout="@layout/fragment_character_detail">
+        <argument
+            android:name="character"
+            app:argType="ltu.m7019e.m7019e_miniproject.model.Character" />
+        <action
+            android:id="@+id/action_characterDetailFragment_to_characterSelectionFragment"
+            app:destination="@id/characterSelectionFragment"
+            app:popUpTo="@id/homepageFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/monsterSelectionFragment"
+        android:name="ltu.m7019e.m7019e_miniproject.MonsterSelectionFragment"
+        android:label="MonsterSelectionFragment"
+        tools:layout="@layout/fragment_monster_selection">
+        <action
+            android:id="@+id/action_monsterSelectionFragment_to_homepageFragment"
             app:destination="@id/homepageFragment"
             app:popUpTo="@id/homepageFragment"
             app:popUpToInclusive="true" />

@@ -37,18 +37,18 @@
 
         <Button
             android:id="@+id/character_selection_button"
-            style="@style/DnD_TextButton"
+            style="@style/DnD_textButton"
             android:drawableTop="@drawable/ic_baseline_menu_40"
             android:text="@string/character_selection_string"
-            app:layout_constraintBottom_toTopOf="@+id/monster_manual_button"
+            app:layout_constraintBottom_toTopOf="@+id/monster_selection_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/character_create_button" />
 
         <Button
-            android:id="@+id/monster_manual_button"
-            style="@style/DnD_TextButton"
+            android:id="@+id/monster_selection_button"
+            style="@style/DnD_textButton"
             android:layout_marginTop="24dp"
             android:drawableTop="@drawable/beholder"
             android:text="@string/monster_manual_string"
@@ -59,7 +59,7 @@
 
         <Button
             android:id="@+id/character_create_button"
-            style="@style/DnD_TextButton"
+            style="@style/DnD_textButton"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="24dp"
             android:drawableTop="@drawable/ic_baseline_add_circle_outline_40"

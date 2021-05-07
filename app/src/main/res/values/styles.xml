@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="DnD_OutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="DnD_outlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/dnd_red</item>
     </style>
 
-    <style name="DnD_TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+    <style name="DnD_textButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:drawableTint">@color/dnd_red</item>
         <item name="android:textColor">@color/dnd_red</item>
+    </style>
+
+    <style name="DnD_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/dnd_red</item>
+        <item name="android:textColorHint">@color/dnd_red</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DnD_textLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="DnD_inputs">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:autofillHints">AUTOFILL_HINT_NOT_APPLICABLE</item>
+        <item name="android:ems">10</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textAlignment">center</item>
     </style>
 </resources>
