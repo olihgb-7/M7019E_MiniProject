@@ -7,12 +7,17 @@
         <variable
             name="character"
             type="ltu.m7019e.m7019e_miniproject.model.Character" />
+        
+        <variable
+            name="clickListener"
+            type="ltu.m7019e.m7019e_miniproject.adapter.CharacterClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/character_selection_item_cl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(character)}">
 
         <TextView
             android:id="@+id/character_selection_name"

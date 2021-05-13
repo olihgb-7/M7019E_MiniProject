@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import ltu.m7019e.m7019e_miniproject.adapter.CharacterClickListener
 import ltu.m7019e.m7019e_miniproject.adapter.CharacterSelectionAdapter
 import ltu.m7019e.m7019e_miniproject.adapter.MonsterSelectionAdapter
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabase
@@ -42,7 +43,11 @@ class CharacterSelectionFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(CharacterSelectionViewModel::class.java)
 
 
-        val characterSelectionAdapter = CharacterSelectionAdapter()
+        val characterSelectionAdapter = CharacterSelectionAdapter(
+                CharacterClickListener { character ->
+                    viewModel.onCharacterItemClicked(character)
+                }
+        )
         binding.characterSelectionRv.adapter = characterSelectionAdapter
         viewModel.characterList.observe(viewLifecycleOwner, { characterList ->
             characterList?.let {
@@ -50,21 +55,14 @@ class CharacterSelectionFragment : Fragment() {
             }
         })
 
-        /*
-        viewModel.characterList.observe(
-            viewLifecycleOwner, { character ->
-                character.forEach { character ->
-                    Log.i("NAME", character.name)
-                    val characterSelectionItemBinding: CharacterSelectionItemBinding = DataBindingUtil.inflate(inflater, R.layout.character_selection_item, container, false)
-                    characterSelectionItemBinding.character = character
-                    characterSelectionItemBinding.root.setOnClickListener {
-                        this.findNavController().navigate(CharacterSelectionFragmentDirections.actionCharacterSelectionFragmentToCharacterDetailFragment(character))
-                    }
-                    binding.characterSelectionLl.addView(characterSelectionItemBinding.root)
-                }
+        viewModel.navigateToCharacterDetails.observe(viewLifecycleOwner, { character ->
+            character?.let {
+                this.findNavController().navigate(
+                        CharacterSelectionFragmentDirections.actionCharacterSelectionFragmentToCharacterDetailFragment(character)
+                )
+                viewModel.onCharacterDetailsNavigated()
             }
-        )
-         */
+        })
 
         return binding.root
     }

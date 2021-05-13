@@ -17,6 +17,12 @@ class CharacterSelectionViewModel(private val characterDatabaseDao: CharacterDat
             return _characterList
         }
 
+    private val _navigateToCharacterDetails = MutableLiveData<Character>()
+    val navigateToCharacterDetails: LiveData<Character>
+        get() {
+            return _navigateToCharacterDetails
+        }
+
     init {
         getCharacters()
     }
@@ -25,5 +31,13 @@ class CharacterSelectionViewModel(private val characterDatabaseDao: CharacterDat
         viewModelScope.launch {
             _characterList.value = characterDatabaseDao.getAllCharacters()
         }
+    }
+
+    fun onCharacterItemClicked(character: Character) {
+        _navigateToCharacterDetails.value = character
+    }
+
+    fun onCharacterDetailsNavigated() {
+        _navigateToCharacterDetails.value = null
     }
 }
