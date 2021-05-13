@@ -61,4 +61,7 @@
     <string name="temp_int">10</string>
     <string name="monster_name">Monster name</string>
     <string name="delete_character">Delete character</string>
+    <string name="add_image">Add character Image</string>
+    <string name="players_handbook_label">Player\'s handbook</string>
+    <string name="players_handbook_instructions">Rotate the device to landscape mode to access the Player\'s handbook videos!</string>
 </resources>

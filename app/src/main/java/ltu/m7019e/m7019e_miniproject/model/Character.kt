@@ -1,5 +1,6 @@
 package ltu.m7019e.m7019e_miniproject.model
 
+import android.net.Uri
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -11,6 +12,9 @@ import kotlinx.android.parcel.Parcelize
 data class Character (
         @PrimaryKey(autoGenerate = true)
         var id: Long = 0L,
+
+        @ColumnInfo(name = "img_uri")
+        var img_uri: String,
 
         @ColumnInfo(name = "name")
         var name: String,
