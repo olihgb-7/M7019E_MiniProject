@@ -35,7 +35,8 @@
             app:iconTint="@color/dnd_red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:rippleColor="@color/material_on_surface_stroke" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

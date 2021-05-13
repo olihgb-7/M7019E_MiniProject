@@ -37,5 +37,9 @@ class HomepageFragment : Fragment() {
         binding.monsterSelectionButton.setOnClickListener {
             findNavController().navigate(HomepageFragmentDirections.actionHomepageFragmentToMonsterSelectionFragment())
         }
+
+        binding.playersHandbookButton.setOnClickListener {
+            findNavController().navigate(HomepageFragmentDirections.actionHomepageFragmentToPlayersHandbookFragment())
+        }
     }
 }

@@ -1,13 +1,19 @@
 package ltu.m7019e.m7019e_miniproject
 
+import android.content.ContentResolver
+import android.content.Context
+import android.content.Intent
+import android.database.Cursor
+import android.net.Uri
 import android.os.Bundle
-import android.view.Gravity
-import androidx.fragment.app.Fragment
+import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabase
@@ -17,18 +23,22 @@ import ltu.m7019e.m7019e_miniproject.model.Character
 import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterCreationViewModel
 import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterCreationViewModelFactory
 
+
 class CharacterCreationFragment : Fragment() {
 
     private var _binding: FragmentCharacterCreationBinding? = null
     private val binding get() = _binding!!
 
-    private var classSpinner: Spinner? = null
-    private var raceSpinner: Spinner? = null
-
     private lateinit var viewModel: CharacterCreationViewModel
     private lateinit var viewModelFactory: CharacterCreationViewModelFactory
 
     private lateinit var characterDatabaseDao: CharacterDatabaseDao
+
+    private var classSpinner: Spinner? = null
+    private var raceSpinner: Spinner? = null
+
+    private lateinit var imgUri: Uri
+    private var imgUriString: String = ""
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +59,7 @@ class CharacterCreationFragment : Fragment() {
 
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -75,6 +86,7 @@ class CharacterCreationFragment : Fragment() {
 
                 var character: Character = Character(
                         name = name,
+                        img_uri = imgUriString,
                         race = race,
                         dndClass = dndClass,
                         strength = strength,

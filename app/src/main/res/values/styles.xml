@@ -16,11 +16,13 @@
 
     <style name="DnD_name">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:textColor">@color/dnd_red</item>
-        <item name="android:textColorHint">@color/dnd_red</item>
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:backgroundTint">@color/material_on_background_emphasis_medium</item>
+        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/nodesto_caps_condensed</item>
     </style>
 
     <style name="DnD_textLabel">
@@ -33,8 +35,16 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:autofillHints">AUTOFILL_HINT_NOT_APPLICABLE</item>
+        <item name="android:backgroundTint">@color/material_on_background_emphasis_medium</item>
+        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
         <item name="android:ems">10</item>
         <item name="android:inputType">number</item>
         <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="DnD_title">
+        <item name="android:fontFamily">@font/nodesto_caps_condensed</item>
+        <item name="android:textColor">@color/dnd_red</item>
+        <item name="android:textSize">50sp</item>
     </style>
 </resources>

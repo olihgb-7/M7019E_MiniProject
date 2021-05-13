@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_homepageFragment_to_monsterSelectionFragment"
             app:destination="@id/monsterSelectionFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_playersHandbookFragment"
+            app:destination="@id/playersHandbookFragment" />
     </fragment>
     <fragment
         android:id="@+id/characterCreationFragment"
@@ -68,6 +71,17 @@
         tools:layout="@layout/fragment_monster_selection">
         <action
             android:id="@+id/action_monsterSelectionFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment"
+            app:popUpTo="@id/homepageFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/playersHandbookFragment"
+        android:name="ltu.m7019e.m7019e_miniproject.PlayersHandbookFragment"
+        android:label="PlayersHandbookFragment"
+        tools:layout="@layout/fragment_players_handbook">
+        <action
+            android:id="@+id/action_playersHandbookFragment_to_homepageFragment"
             app:destination="@id/homepageFragment"
             app:popUpTo="@id/homepageFragment"
             app:popUpToInclusive="true" />
