@@ -1,6 +1,7 @@
 package ltu.m7019e.m7019e_miniproject
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import ltu.m7019e.m7019e_miniproject.adapter.CharacterSelectionAdapter
+import ltu.m7019e.m7019e_miniproject.adapter.MonsterSelectionAdapter
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabase
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
 import ltu.m7019e.m7019e_miniproject.databinding.CharacterSelectionItemBinding
@@ -38,9 +41,20 @@ class CharacterSelectionFragment : Fragment() {
         viewModelFactory = CharacterSelectionViewModelFactory(characterDatabaseDao, application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CharacterSelectionViewModel::class.java)
 
+
+        val characterSelectionAdapter = CharacterSelectionAdapter()
+        binding.characterSelectionRv.adapter = characterSelectionAdapter
+        viewModel.characterList.observe(viewLifecycleOwner, { characterList ->
+            characterList?.let {
+                characterSelectionAdapter.submitList(characterList)
+            }
+        })
+
+        /*
         viewModel.characterList.observe(
             viewLifecycleOwner, { character ->
                 character.forEach { character ->
+                    Log.i("NAME", character.name)
                     val characterSelectionItemBinding: CharacterSelectionItemBinding = DataBindingUtil.inflate(inflater, R.layout.character_selection_item, container, false)
                     characterSelectionItemBinding.character = character
                     characterSelectionItemBinding.root.setOnClickListener {
@@ -50,6 +64,7 @@ class CharacterSelectionFragment : Fragment() {
                 }
             }
         )
+         */
 
         return binding.root
     }

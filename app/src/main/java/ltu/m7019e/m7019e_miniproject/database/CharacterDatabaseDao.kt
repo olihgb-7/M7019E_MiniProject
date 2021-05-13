@@ -14,6 +14,6 @@ interface CharacterDatabaseDao {
     @Delete
     suspend fun delete(character: Character)
 
-    @Query("SELECT * from characters ORDER BY id ASC")
+    @Query("SELECT * from characters")
     suspend fun getAllCharacters(): List<Character>
 }

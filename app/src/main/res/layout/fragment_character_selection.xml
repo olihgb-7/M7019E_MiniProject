@@ -10,22 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ScrollView
-            android:id="@+id/character_selection_sv"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/character_selection_rv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:fillViewport="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/character_selection_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:id="@+id/character_selection_ll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-        </ScrollView>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/character_selection_back"
