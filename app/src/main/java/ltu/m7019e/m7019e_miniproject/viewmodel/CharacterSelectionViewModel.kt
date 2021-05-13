@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
-import ltu.m7019e.m7019e_miniproject.database.Characters
 import ltu.m7019e.m7019e_miniproject.model.Character
 
 class CharacterSelectionViewModel(private val characterDatabaseDao: CharacterDatabaseDao, application: Application) : AndroidViewModel(application) {
@@ -19,7 +18,7 @@ class CharacterSelectionViewModel(private val characterDatabaseDao: CharacterDat
         }
 
     init {
-        _characterList.postValue(Characters().list)
+        getCharacters()
     }
 
     fun getCharacters() {

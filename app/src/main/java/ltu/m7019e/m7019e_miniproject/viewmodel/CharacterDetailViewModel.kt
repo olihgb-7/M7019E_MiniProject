@@ -7,15 +7,16 @@ import kotlinx.coroutines.launch
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
 import ltu.m7019e.m7019e_miniproject.model.Character
 
-class CharacterCreationViewModel(private val characterDatabaseDao: CharacterDatabaseDao, application: Application) : AndroidViewModel(application) {
+class CharacterDetailViewModel(private val characterDatabaseDao: CharacterDatabaseDao, application: Application) : AndroidViewModel(application) {
 
     init {
 
     }
 
-    fun saveCharacter(character: Character) {
+    fun deleteCharacter(character: Character) {
         viewModelScope.launch {
-            characterDatabaseDao.insert(character)
+            characterDatabaseDao.delete(character)
         }
     }
+
 }
