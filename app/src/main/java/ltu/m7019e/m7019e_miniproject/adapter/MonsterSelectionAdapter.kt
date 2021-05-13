@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ltu.m7019e.m7019e_miniproject.databinding.MonsterSelectionItemBinding
 import ltu.m7019e.m7019e_miniproject.model.Monster
 
-
-class MonsterSelectionAdapter : ListAdapter<Monster, MonsterSelectionAdapter.ViewHolder>(MoviewReviewDiffCallback()) {
+class MonsterSelectionAdapter : ListAdapter<Monster, MonsterSelectionAdapter.ViewHolder>(MonsterSelectionDiffCallback()) {
 
     class ViewHolder(private var binding: MonsterSelectionItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -36,7 +35,7 @@ class MonsterSelectionAdapter : ListAdapter<Monster, MonsterSelectionAdapter.Vie
     }
 }
 
-class MoviewReviewDiffCallback : DiffUtil.ItemCallback<Monster>() {
+class MonsterSelectionDiffCallback : DiffUtil.ItemCallback<Monster>() {
     override fun areItemsTheSame(oldItem: Monster, newItem: Monster): Boolean {
         return oldItem.index == newItem.index
     }
