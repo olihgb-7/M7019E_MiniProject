@@ -37,30 +37,28 @@
             tools:text="@string/character_name" />
 
         <TextView
-            android:id="@+id/character_detail_class"
-            style="@style/DnD_textLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_name"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_name"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_name"
-            tools:text="@string/class_hint"
-            android:text="@{character.dndClass}" />
-
-        <TextView
             android:id="@+id/character_detail_race"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_class"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_class"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_class"
-            tools:text="@string/race_hint"
-            android:text="@{character.race}"/>
+            android:text="@{character.race}"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_name"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_name"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_name"
+            tools:text="@string/race_hint" />
+
+        <TextView
+            android:id="@+id/character_detail_class"
+            style="@style/DnD_textLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{character.dndClass}"
+            app:layout_constraintEnd_toEndOf="@+id/character_detail_race"
+            app:layout_constraintStart_toStartOf="@+id/character_detail_race"
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_race"
+            tools:text="@string/class_hint" />
 
         <View
             android:id="@+id/character_detail_div1"
@@ -70,7 +68,7 @@
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_race" />
+            app:layout_constraintTop_toBottomOf="@+id/character_detail_class" />
 
         <TextView
             android:id="@+id/character_detail_strength_label"

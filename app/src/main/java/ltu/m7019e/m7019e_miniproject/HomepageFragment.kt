@@ -1,5 +1,6 @@
 package ltu.m7019e.m7019e_miniproject
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,7 @@ class HomepageFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentHomepageBinding.inflate(inflater)
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         return binding.root
     }

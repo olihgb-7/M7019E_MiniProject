@@ -3,6 +3,7 @@ package ltu.m7019e.m7019e_miniproject
 import android.R
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,7 @@ class CharacterDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentCharacterDetailBinding.inflate(inflater)
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         character = CharacterDetailFragmentArgs.fromBundle(requireArguments()).character
         binding.character = character

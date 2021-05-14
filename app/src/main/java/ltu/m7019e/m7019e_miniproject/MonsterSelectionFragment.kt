@@ -1,5 +1,6 @@
 package ltu.m7019e.m7019e_miniproject
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +25,7 @@ class MonsterSelectionFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         _binding = FragmentMonsterSelectionBinding.inflate(inflater)
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
         val application = requireNotNull(this.activity).application
         viewModelFactory = MonsterSelectionViewModel.Factory(application)
@@ -40,15 +42,16 @@ class MonsterSelectionFragment : Fragment() {
         viewModel.dataFetchStatus.observe(viewLifecycleOwner,{ status ->
             when(status) {
                 DataFetchStatus.LOADING -> {
-                    binding.monsterSelectionStatus.visibility = View.VISIBLE
-                    binding.monsterSelectionStatus.setImageResource(R.drawable.loading_animation)
+                    binding.monsterSelectionProgressBar.visibility = View.VISIBLE
                 }
                 DataFetchStatus.ERROR -> {
+                    binding.monsterSelectionProgressBar.visibility = View.GONE
                     binding.monsterSelectionStatus.visibility = View.VISIBLE
                     binding.monsterSelectionStatus.setImageResource(R.drawable.ic_connection_error)
                 }
                 DataFetchStatus.DONE -> {
                     binding.monsterSelectionStatus.visibility = View.GONE
+                    binding.monsterSelectionProgressBar.visibility = View.GONE
                 }
             }
         })

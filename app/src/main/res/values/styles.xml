@@ -47,4 +47,8 @@
         <item name="android:textColor">@color/dnd_red</item>
         <item name="android:textSize">50sp</item>
     </style>
+
+    <style name="DnD_progressBar" parent="android:Widget.Material.Light.ProgressBar.Large">
+        <item name="android:indeterminateTint">@color/dnd_red</item>
+    </style>
 </resources>

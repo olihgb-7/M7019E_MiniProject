@@ -1,5 +1,6 @@
 package ltu.m7019e.m7019e_miniproject
 
+import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.hardware.SensorManager
 import android.os.Bundle
@@ -33,6 +34,7 @@ class PlayersHandbookFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentPlayersHandbookBinding.inflate(inflater)
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
         val application = requireNotNull(this.activity).application
         viewModelFactory = PlayersHandbookViewModel.Factory(application)
@@ -50,14 +52,15 @@ class PlayersHandbookFragment : Fragment() {
             viewModel.dataFetchStatus.observe(viewLifecycleOwner,{ status ->
                 when(status) {
                     DataFetchStatus.LOADING -> {
-                        binding.playersHanbookStatus.visibility = View.VISIBLE
-                        binding.playersHanbookStatus.setImageResource(R.drawable.loading_animation)
+                        binding.playersHandbookProgressBar.visibility = View.VISIBLE
                     }
                     DataFetchStatus.ERROR -> {
+                        binding.playersHandbookProgressBar.visibility = View.GONE
                         binding.playersHanbookStatus.visibility = View.VISIBLE
                         binding.playersHanbookStatus.setImageResource(R.drawable.ic_connection_error)
                     }
                     DataFetchStatus.DONE -> {
+                        binding.playersHandbookProgressBar.visibility = View.GONE
                         binding.playersHanbookStatus.visibility = View.GONE
                     }
                 }
@@ -65,6 +68,7 @@ class PlayersHandbookFragment : Fragment() {
         }
         else {
             binding.playersHandbookWv.visibility = View.GONE
+            binding.playersHandbookProgressBar.visibility = View.GONE
             binding.playersHandbookInstructions.visibility = View.VISIBLE
             binding.playersHanbookRotate.visibility = View.VISIBLE
             binding.playersHandbookBack.visibility = View.VISIBLE

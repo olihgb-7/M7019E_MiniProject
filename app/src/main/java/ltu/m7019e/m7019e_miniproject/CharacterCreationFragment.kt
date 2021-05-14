@@ -1,5 +1,6 @@
 package ltu.m7019e.m7019e_miniproject
 
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -26,8 +27,9 @@ class CharacterCreationFragment : Fragment() {
 
     private lateinit var characterDatabaseDao: CharacterDatabaseDao
 
-    private var classSpinner: Spinner? = null
     private var raceSpinner: Spinner? = null
+    private var classSpinner: Spinner? = null
+
 
     private lateinit var imgUri: Uri
     private var imgUriString: String = ""
@@ -38,9 +40,10 @@ class CharacterCreationFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentCharacterCreationBinding.inflate(inflater)
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
-        classSpinner = binding.characterCreationClass
         raceSpinner = binding.characterCreationRace
+        classSpinner = binding.characterCreationClass
 
         val application = requireNotNull(this.activity).application
         characterDatabaseDao = CharacterDatabase.getInstance(application).characterDatabaseDao

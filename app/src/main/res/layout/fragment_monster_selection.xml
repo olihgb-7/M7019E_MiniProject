@@ -45,8 +45,17 @@
             app:layout_constraintBottom_toBottomOf="@+id/monster_selection_rv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/monster_selection_progress_bar"
+            style="@style/DnD_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/monster_selection_rv"
+            app:layout_constraintEnd_toEndOf="@+id/monster_selection_rv"
+            app:layout_constraintStart_toStartOf="@+id/monster_selection_rv"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

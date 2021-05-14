@@ -1,5 +1,6 @@
 package ltu.m7019e.m7019e_miniproject
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,7 @@ class CharacterSelectionFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentCharacterSelectionBinding.inflate(inflater)
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
         val application = requireNotNull(this.activity).application
         characterDatabaseDao = CharacterDatabase.getInstance(application).characterDatabaseDao

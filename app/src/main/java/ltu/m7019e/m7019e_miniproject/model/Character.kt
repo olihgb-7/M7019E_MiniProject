@@ -19,11 +19,11 @@ data class Character (
         @ColumnInfo(name = "name")
         var name: String,
 
-        @ColumnInfo(name = "dnd_class")
-        var dndClass: String,
-
         @ColumnInfo(name = "race")
         var race: String,
+
+        @ColumnInfo(name = "dnd_class")
+        var dndClass: String,
 
         @ColumnInfo(name = "strength")
         var strength: Int,
