@@ -11,14 +11,21 @@ import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentPlayersHandbookBinding
+import ltu.m7019e.m7019e_miniproject.network.DataFetchStatus
 import ltu.m7019e.m7019e_miniproject.utils.Constants
+import ltu.m7019e.m7019e_miniproject.viewmodel.MonsterSelectionViewModel
+import ltu.m7019e.m7019e_miniproject.viewmodel.PlayersHandbookViewModel
 
 class PlayersHandbookFragment : Fragment() {
 
     private var _binding: FragmentPlayersHandbookBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var viewModel: PlayersHandbookViewModel
+    private lateinit var viewModelFactory: PlayersHandbookViewModel.Factory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,10 +34,11 @@ class PlayersHandbookFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentPlayersHandbookBinding.inflate(inflater)
 
-        binding.playersHandbookWv.settings.javaScriptEnabled = true
-        binding.playersHandbookWv.settings.pluginState = WebSettings.PluginState.ON
-        binding.playersHandbookWv.loadUrl(Constants.PLAYERS_HANDBOOK_TOYTUBE_URL)
-        binding.playersHandbookWv.webChromeClient = WebChromeClient()
+        val application = requireNotNull(this.activity).application
+        viewModelFactory = PlayersHandbookViewModel.Factory(application)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(PlayersHandbookViewModel::class.java)
+
+        viewModel.setupWebView(binding)
 
         if(resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
             binding.playersHandbookWv.visibility = View.VISIBLE
@@ -38,6 +46,22 @@ class PlayersHandbookFragment : Fragment() {
             binding.playersHanbookRotate.visibility = View.GONE
             binding.playersHandbookBack.visibility = View.GONE
             activity?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
+            viewModel.dataFetchStatus.observe(viewLifecycleOwner,{ status ->
+                when(status) {
+                    DataFetchStatus.LOADING -> {
+                        binding.playersHanbookStatus.visibility = View.VISIBLE
+                        binding.playersHanbookStatus.setImageResource(R.drawable.loading_animation)
+                    }
+                    DataFetchStatus.ERROR -> {
+                        binding.playersHanbookStatus.visibility = View.VISIBLE
+                        binding.playersHanbookStatus.setImageResource(R.drawable.ic_connection_error)
+                    }
+                    DataFetchStatus.DONE -> {
+                        binding.playersHanbookStatus.visibility = View.GONE
+                    }
+                }
+            })
         }
         else {
             binding.playersHandbookWv.visibility = View.GONE
