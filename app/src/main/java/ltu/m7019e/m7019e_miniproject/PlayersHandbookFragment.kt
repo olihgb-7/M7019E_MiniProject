@@ -34,7 +34,6 @@ class PlayersHandbookFragment : Fragment() {
 
         if(resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
             binding.playersHandbookWv.visibility = View.VISIBLE
-            binding.playersHandbookLabel.visibility = View.GONE
             binding.playersHandbookInstructions.visibility = View.GONE
             binding.playersHanbookRotate.visibility = View.GONE
             binding.playersHandbookBack.visibility = View.GONE
@@ -42,7 +41,6 @@ class PlayersHandbookFragment : Fragment() {
         }
         else {
             binding.playersHandbookWv.visibility = View.GONE
-            binding.playersHandbookLabel.visibility = View.VISIBLE
             binding.playersHandbookInstructions.visibility = View.VISIBLE
             binding.playersHanbookRotate.visibility = View.VISIBLE
             binding.playersHandbookBack.visibility = View.VISIBLE

@@ -1,13 +1,11 @@
 package ltu.m7019e.m7019e_miniproject.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
 import ltu.m7019e.m7019e_miniproject.model.Character
+import java.lang.IllegalArgumentException
 
 class CharacterSelectionViewModel(private val characterDatabaseDao: CharacterDatabaseDao, application: Application) : AndroidViewModel(application) {
 
@@ -39,5 +37,14 @@ class CharacterSelectionViewModel(private val characterDatabaseDao: CharacterDat
 
     fun onCharacterDetailsNavigated() {
         _navigateToCharacterDetails.value = null
+    }
+
+    class Factory(private val characterDatabaseDao: CharacterDatabaseDao, private val application: Application): ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(CharacterSelectionViewModel::class.java)) {
+                return CharacterSelectionViewModel(characterDatabaseDao, application) as T
+            }
+            throw IllegalArgumentException("Unkown ViewModel class")
+        }
     }
 }

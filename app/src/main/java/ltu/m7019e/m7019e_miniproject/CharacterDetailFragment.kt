@@ -3,12 +3,7 @@ package ltu.m7019e.m7019e_miniproject
 import android.R
 import android.app.AlertDialog
 import android.content.DialogInterface
-import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,8 +16,6 @@ import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentCharacterDetailBinding
 import ltu.m7019e.m7019e_miniproject.model.Character
 import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterDetailViewModel
-import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterDetailViewModelFactory
-
 
 class CharacterDetailFragment : Fragment() {
 
@@ -30,7 +23,7 @@ class CharacterDetailFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: CharacterDetailViewModel
-    private lateinit var viewModelFactory: CharacterDetailViewModelFactory
+    private lateinit var viewModelFactory: CharacterDetailViewModel.Factory
 
     private lateinit var characterDatabaseDao: CharacterDatabaseDao
 
@@ -49,7 +42,7 @@ class CharacterDetailFragment : Fragment() {
         val application = requireNotNull(this.activity).application
         characterDatabaseDao = CharacterDatabase.getInstance(application).characterDatabaseDao
 
-        viewModelFactory = CharacterDetailViewModelFactory(characterDatabaseDao, application)
+        viewModelFactory = CharacterDetailViewModel.Factory(characterDatabaseDao, application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CharacterDetailViewModel::class.java)
 
         return binding.root

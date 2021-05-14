@@ -1,13 +1,7 @@
 package ltu.m7019e.m7019e_miniproject
 
-import android.content.ContentResolver
-import android.content.Context
-import android.content.Intent
-import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,8 +15,6 @@ import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentCharacterCreationBinding
 import ltu.m7019e.m7019e_miniproject.model.Character
 import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterCreationViewModel
-import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterCreationViewModelFactory
-
 
 class CharacterCreationFragment : Fragment() {
 
@@ -30,7 +22,7 @@ class CharacterCreationFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: CharacterCreationViewModel
-    private lateinit var viewModelFactory: CharacterCreationViewModelFactory
+    private lateinit var viewModelFactory: CharacterCreationViewModel.Factory
 
     private lateinit var characterDatabaseDao: CharacterDatabaseDao
 
@@ -53,7 +45,7 @@ class CharacterCreationFragment : Fragment() {
         val application = requireNotNull(this.activity).application
         characterDatabaseDao = CharacterDatabase.getInstance(application).characterDatabaseDao
 
-        viewModelFactory = CharacterCreationViewModelFactory(characterDatabaseDao, application)
+        viewModelFactory = CharacterCreationViewModel.Factory(characterDatabaseDao, application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CharacterCreationViewModel::class.java)
 
 
