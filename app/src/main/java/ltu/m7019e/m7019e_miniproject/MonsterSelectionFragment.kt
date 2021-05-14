@@ -26,7 +26,6 @@ class MonsterSelectionFragment : Fragment() {
         _binding = FragmentMonsterSelectionBinding.inflate(inflater)
 
         val application = requireNotNull(this.activity).application
-
         viewModelFactory = MonsterSelectionViewModel.Factory(application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MonsterSelectionViewModel::class.java)
 
