@@ -7,11 +7,15 @@
         <variable
             name="monster"
             type="ltu.m7019e.m7019e_miniproject.model.Monster" />
+        <variable
+            name="clickListener"
+            type="ltu.m7019e.m7019e_miniproject.adapter.MonsterClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(monster)}">
 
         <TextView
             android:id="@+id/monster_selection_name"

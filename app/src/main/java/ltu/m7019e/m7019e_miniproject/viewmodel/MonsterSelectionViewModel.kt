@@ -25,6 +25,12 @@ class MonsterSelectionViewModel(application: Application) : AndroidViewModel(app
             return _dataFetchStatus
         }
 
+    private val _navigateToMonsterDetail = MutableLiveData<Monster>()
+    val navigateToMonsterDetail: LiveData<Monster>
+        get() {
+            return _navigateToMonsterDetail
+        }
+
     init {
         getMonsters()
         _dataFetchStatus.value = DataFetchStatus.LOADING
@@ -42,6 +48,14 @@ class MonsterSelectionViewModel(application: Application) : AndroidViewModel(app
                 _dataFetchStatus.value = DataFetchStatus.ERROR
             }
         }
+    }
+
+    fun onMonsterItemClicked(monster: Monster) {
+        _navigateToMonsterDetail.value = monster
+    }
+
+    fun onMonsterDetailNavigated() {
+        _navigateToMonsterDetail.value = null
     }
 
     class Factory(private val application: Application): ViewModelProvider.Factory {

@@ -71,176 +71,176 @@
             app:layout_constraintTop_toBottomOf="@+id/character_detail_class" />
 
         <TextView
-            android:id="@+id/character_detail_strength_label"
+            android:id="@+id/monster_detail_strength_label"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/strength_hint"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/character_detail_dexterity_label"
+            app:layout_constraintEnd_toStartOf="@+id/monster_detail_dexterity_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/character_detail_div1"
             />
 
         <TextView
-            android:id="@+id/character_detail_strength"
+            android:id="@+id/monster_detail_strength"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{Integer.toString(character.strength)}"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_strength_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_strength_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_strength_label" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_strength_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_strength_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_strength_label" />
 
         <TextView
-            android:id="@+id/character_detail_dexterity_label"
+            android:id="@+id/monster_detail_dexterity_label"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dexterity_hint"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/character_detail_constitution_label"
-            app:layout_constraintStart_toEndOf="@+id/character_detail_strength_label"
-            app:layout_constraintTop_toTopOf="@+id/character_detail_strength_label" />
+            app:layout_constraintEnd_toStartOf="@+id/monster_detail_constitution_label"
+            app:layout_constraintStart_toEndOf="@+id/monster_detail_strength_label"
+            app:layout_constraintTop_toTopOf="@+id/monster_detail_strength_label" />
 
         <TextView
-            android:id="@+id/character_detail_dexterity"
+            android:id="@+id/monsterr_detail_dexterity"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{Integer.toString(character.dexterity)}"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_dexterity_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_dexterity_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_dexterity_label" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_dexterity_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_dexterity_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_dexterity_label" />
 
         <TextView
-            android:id="@+id/character_detail_constitution_label"
+            android:id="@+id/monster_detail_constitution_label"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/constitution_hint"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/character_detail_dexterity_label"
-            app:layout_constraintTop_toTopOf="@+id/character_detail_dexterity_label" />
+            app:layout_constraintStart_toEndOf="@+id/monster_detail_dexterity_label"
+            app:layout_constraintTop_toTopOf="@+id/monster_detail_dexterity_label" />
 
         <TextView
-            android:id="@+id/character_detail_constitution"
+            android:id="@+id/monster_detail_constitution"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{Integer.toString(character.constitution)}"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_constitution_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_constitution_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_constitution_label" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_constitution_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_constitution_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_constitution_label" />
 
         <TextView
-            android:id="@+id/character_detail_intelligence_label"
+            android:id="@+id/monster_detail_intelligence_label"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/intelligence_hint"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_strength_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_strength_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_strength" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_strength_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_strength_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_strength" />
 
         <TextView
-            android:id="@+id/character_detail_intelligence"
+            android:id="@+id/monster_detail_intelligence"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{Integer.toString(character.intelligence)}"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_intelligence_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_intelligence_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_intelligence_label" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_intelligence_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_intelligence_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_intelligence_label" />
 
         <TextView
-            android:id="@+id/character_detail_wisdom_label"
+            android:id="@+id/monster_detail_wisdom_label"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/wisdom_hint"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_dexterity_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_dexterity_label"
-            app:layout_constraintTop_toTopOf="@+id/character_detail_intelligence_label" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_dexterity_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_dexterity_label"
+            app:layout_constraintTop_toTopOf="@+id/monster_detail_intelligence_label" />
 
         <TextView
-            android:id="@+id/character_detail_wisdom"
+            android:id="@+id/monster_detail_wisdom"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{Integer.toString(character.wisdom)}"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_wisdom_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_wisdom_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_wisdom_label" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_wisdom_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_wisdom_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_wisdom_label" />
 
         <TextView
-            android:id="@+id/character_detail_charisma_label"
+            android:id="@+id/monster_detail_charisma_label"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/charisma_hint"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_constitution_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_constitution_label"
-            app:layout_constraintTop_toTopOf="@+id/character_detail_wisdom_label" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_constitution_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_constitution_label"
+            app:layout_constraintTop_toTopOf="@+id/monster_detail_wisdom_label" />
 
         <TextView
-            android:id="@+id/character_detail_charisma"
+            android:id="@+id/monster_detail_charisma"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{Integer.toString(character.charisma)}"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_charisma_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_charisma_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_charisma_label" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_charisma_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_charisma_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_charisma_label" />
 
         <View
-            android:id="@+id/character_detail_div2"
+            android:id="@+id/monster_detail_div2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_wisdom" />
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_wisdom" />
 
         <TextView
-            android:id="@+id/character_detail_health_points_label"
+            android:id="@+id/monster_detail_health_points_label"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/health_points_hint"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/character_detail_armour_class_label"
+            app:layout_constraintEnd_toStartOf="@+id/monster_detail_armour_class_label"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_div2" />
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_div2" />
 
         <TextView
-            android:id="@+id/character_detail_healt_points"
+            android:id="@+id/monster_detail_healt_points"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_health_points_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_health_points_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_health_points_label"
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_health_points_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_health_points_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_health_points_label"
             android:text="@{Integer.toString(character.healthPoints)}" />
 
         <TextView
-            android:id="@+id/character_detail_armour_class_label"
+            android:id="@+id/monster_detail_armour_class_label"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -248,18 +248,18 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/character_detail_health_points_label"
-            app:layout_constraintTop_toTopOf="@+id/character_detail_health_points_label" />
+            app:layout_constraintStart_toEndOf="@+id/monster_detail_health_points_label"
+            app:layout_constraintTop_toTopOf="@+id/monster_detail_health_points_label" />
 
         <TextView
-            android:id="@+id/character_detail_armour_class"
+            android:id="@+id/monster_detail_armour_class"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_armour_class_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_armour_class_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_armour_class_label"
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_armour_class_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_armour_class_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_armour_class_label"
             android:text="@{Integer.toString(character.armourClass)}" />
 
         <TextView
@@ -270,9 +270,9 @@
             android:layout_marginTop="32dp"
             android:text="@string/initiative_hint"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_health_points_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_health_points_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_healt_points" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_health_points_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_health_points_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_healt_points" />
 
         <TextView
             android:id="@+id/character_detail_initiative"
@@ -286,26 +286,26 @@
             android:text="@{Integer.toString(character.initiative)}" />
 
         <TextView
-            android:id="@+id/character_detail_speed_label"
+            android:id="@+id/monster_detail_speed_label"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/speed_hint"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_armour_class_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_armour_class_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_armour_class" />
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_armour_class_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_armour_class_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_armour_class" />
 
         <TextView
-            android:id="@+id/character_detail_speed"
+            android:id="@+id/monster_detail_speed"
             style="@style/DnD_textLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/character_detail_speed_label"
-            app:layout_constraintStart_toStartOf="@+id/character_detail_speed_label"
-            app:layout_constraintTop_toBottomOf="@+id/character_detail_speed_label"
+            app:layout_constraintEnd_toEndOf="@+id/monster_detail_speed_label"
+            app:layout_constraintStart_toStartOf="@+id/monster_detail_speed_label"
+            app:layout_constraintTop_toBottomOf="@+id/monster_detail_speed_label"
             android:text="@{Integer.toString(character.speed)}" />
 
         <Button
