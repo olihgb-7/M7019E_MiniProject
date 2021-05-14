@@ -15,10 +15,10 @@ class CharacterSelectionViewModel(private val characterDatabaseDao: CharacterDat
             return _characterList
         }
 
-    private val _navigateToCharacterDetails = MutableLiveData<Character>()
-    val navigateToCharacterDetails: LiveData<Character>
+    private val _navigateToCharacterDetail = MutableLiveData<Character>()
+    val navigateToCharacterDetail: LiveData<Character>
         get() {
-            return _navigateToCharacterDetails
+            return _navigateToCharacterDetail
         }
 
     init {
@@ -32,11 +32,11 @@ class CharacterSelectionViewModel(private val characterDatabaseDao: CharacterDat
     }
 
     fun onCharacterItemClicked(character: Character) {
-        _navigateToCharacterDetails.value = character
+        _navigateToCharacterDetail.value = character
     }
 
-    fun onCharacterDetailsNavigated() {
-        _navigateToCharacterDetails.value = null
+    fun onCharacterDetailNavigated() {
+        _navigateToCharacterDetail.value = null
     }
 
     class Factory(private val characterDatabaseDao: CharacterDatabaseDao, private val application: Application): ViewModelProvider.Factory {

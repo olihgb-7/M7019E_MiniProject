@@ -74,6 +74,9 @@
             app:destination="@id/homepageFragment"
             app:popUpTo="@id/homepageFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_monsterSelectionFragment_to_monsterDetailFragment"
+            app:destination="@id/monsterDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/playersHandbookFragment"
@@ -85,5 +88,19 @@
             app:destination="@id/homepageFragment"
             app:popUpTo="@id/homepageFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/monsterDetailFragment"
+        android:name="ltu.m7019e.m7019e_miniproject.MonsterDetailFragment"
+        android:label="MonsterDetailFragment"
+        tools:layout="@layout/fragment_monster_detail">
+        <action
+            android:id="@+id/action_monsterDetailFragment_to_monsterSelectionFragment"
+            app:destination="@id/monsterSelectionFragment"
+            app:popUpTo="@id/homepageFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="monster"
+            app:argType="ltu.m7019e.m7019e_miniproject.model.Monster" />
     </fragment>
 </navigation>

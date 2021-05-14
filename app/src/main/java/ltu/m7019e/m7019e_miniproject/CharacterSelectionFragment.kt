@@ -52,12 +52,12 @@ class CharacterSelectionFragment : Fragment() {
             }
         })
 
-        viewModel.navigateToCharacterDetails.observe(viewLifecycleOwner, { character ->
+        viewModel.navigateToCharacterDetail.observe(viewLifecycleOwner, { character ->
             character?.let {
                 this.findNavController().navigate(
                         CharacterSelectionFragmentDirections.actionCharacterSelectionFragmentToCharacterDetailFragment(character)
                 )
-                viewModel.onCharacterDetailsNavigated()
+                viewModel.onCharacterDetailNavigated()
             }
         })
 
