@@ -1,23 +1,18 @@
 package ltu.m7019e.m7019e_miniproject
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import ltu.m7019e.m7019e_miniproject.adapter.CharacterClickListener
 import ltu.m7019e.m7019e_miniproject.adapter.CharacterSelectionAdapter
-import ltu.m7019e.m7019e_miniproject.adapter.MonsterSelectionAdapter
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabase
 import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
-import ltu.m7019e.m7019e_miniproject.databinding.CharacterSelectionItemBinding
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentCharacterSelectionBinding
 import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterSelectionViewModel
-import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterSelectionViewModelFactory
 
 class CharacterSelectionFragment : Fragment() {
 
@@ -25,7 +20,7 @@ class CharacterSelectionFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: CharacterSelectionViewModel
-    private lateinit var viewModelFactory: CharacterSelectionViewModelFactory
+    private lateinit var viewModelFactory: CharacterSelectionViewModel.Factory
 
     private lateinit var characterDatabaseDao: CharacterDatabaseDao
 
@@ -39,7 +34,7 @@ class CharacterSelectionFragment : Fragment() {
         val application = requireNotNull(this.activity).application
         characterDatabaseDao = CharacterDatabase.getInstance(application).characterDatabaseDao
 
-        viewModelFactory = CharacterSelectionViewModelFactory(characterDatabaseDao, application)
+        viewModelFactory = CharacterSelectionViewModel.Factory(characterDatabaseDao, application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CharacterSelectionViewModel::class.java)
 
 

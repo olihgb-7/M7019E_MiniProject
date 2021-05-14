@@ -9,8 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import ltu.m7019e.m7019e_miniproject.adapter.MonsterSelectionAdapter
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentMonsterSelectionBinding
+import ltu.m7019e.m7019e_miniproject.network.DataFetchStatus
 import ltu.m7019e.m7019e_miniproject.viewmodel.MonsterSelectionViewModel
-import ltu.m7019e.m7019e_miniproject.viewmodel.MonsterSelectionViewModelFactory
 
 class MonsterSelectionFragment : Fragment() {
 
@@ -18,7 +18,7 @@ class MonsterSelectionFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: MonsterSelectionViewModel
-    private lateinit var viewModelFactory: MonsterSelectionViewModelFactory
+    private lateinit var viewModelFactory: MonsterSelectionViewModel.Factory
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -27,7 +27,7 @@ class MonsterSelectionFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
 
-        viewModelFactory = MonsterSelectionViewModelFactory(application)
+        viewModelFactory = MonsterSelectionViewModel.Factory(application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MonsterSelectionViewModel::class.java)
 
         val monsterSelectionAdapter = MonsterSelectionAdapter()
@@ -35,6 +35,22 @@ class MonsterSelectionFragment : Fragment() {
         viewModel.monsterList.observe(viewLifecycleOwner, { monsterList ->
             monsterList?.let {
                 monsterSelectionAdapter.submitList(monsterList)
+            }
+        })
+
+        viewModel.dataFetchStatus.observe(viewLifecycleOwner,{ status ->
+            when(status) {
+                DataFetchStatus.LOADING -> {
+                    binding.monsterSelectionStatus.visibility = View.VISIBLE
+                    binding.monsterSelectionStatus.setImageResource(R.drawable.loading_animation)
+                }
+                DataFetchStatus.ERROR -> {
+                    binding.monsterSelectionStatus.visibility = View.VISIBLE
+                    binding.monsterSelectionStatus.setImageResource(R.drawable.ic_connection_error)
+                }
+                DataFetchStatus.DONE -> {
+                    binding.monsterSelectionStatus.visibility = View.GONE
+                }
             }
         })
 
