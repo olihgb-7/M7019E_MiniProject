@@ -58,4 +58,5 @@
     <string name="players_handbook_label">Player\'s handbook</string>
     <string name="players_handbook_instructions">Rotate the device to landscape mode to access the Player\'s handbook videos!</string>
     <string name="about_dnd">D&amp;D Official Homepage</string>
+    <string name="actions_label">Actions</string>
 </resources>
