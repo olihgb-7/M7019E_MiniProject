@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -16,6 +18,7 @@ import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentCharacterCreationBinding
 import ltu.m7019e.m7019e_miniproject.model.Character
 import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterCreationViewModel
+
 
 class CharacterCreationFragment : Fragment() {
 
@@ -51,6 +54,16 @@ class CharacterCreationFragment : Fragment() {
         viewModelFactory = CharacterCreationViewModel.Factory(characterDatabaseDao, application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CharacterCreationViewModel::class.java)
 
+        viewModel.alignmentDescription.observe(viewLifecycleOwner, { alignmentDesc ->
+            binding.characterCreationAlignment.text = alignmentDesc
+        })
+        viewModel.ageDescription.observe(viewLifecycleOwner, { ageDesc ->
+            binding.characterCreationAge.text = ageDesc
+        })
+        viewModel.sizeDescription.observe(viewLifecycleOwner, { sizeDesc ->
+            binding.characterCreationSizeDescription.text = sizeDesc
+        })
+
 
         return binding.root
     }
@@ -58,6 +71,17 @@ class CharacterCreationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.characterCreationRace.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View, position: Int, id: Long) {
+                var raceIndex = binding.characterCreationRace.selectedItem.toString().decapitalize()
+                viewModel.getCharacterRaceAlignment(raceIndex)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+        }
 
         binding.characterCreationCancel.setOnClickListener {
             findNavController().navigate(CharacterCreationFragmentDirections.actionCharacterCreationFragmentToHomepageFragment())

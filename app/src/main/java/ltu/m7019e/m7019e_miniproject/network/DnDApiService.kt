@@ -1,5 +1,6 @@
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import ltu.m7019e.m7019e_miniproject.network.CharacterRaceResponse
 import ltu.m7019e.m7019e_miniproject.network.MonsterDetailsResponse
 import ltu.m7019e.m7019e_miniproject.network.MonstersResponse
 import ltu.m7019e.m7019e_miniproject.utils.Constants
@@ -54,9 +55,15 @@ interface DnDApiService {
 
     @GET
     suspend fun getMonsterDetails(
-            @Url
-            monsterIndex: String
+        @Url
+        monsterIndex: String
     ): MonsterDetailsResponse
+
+    @GET
+    suspend fun getCharacterRace(
+        @Url
+        raceIndex: String,
+    ): CharacterRaceResponse
 }
 
 object DnDApi {

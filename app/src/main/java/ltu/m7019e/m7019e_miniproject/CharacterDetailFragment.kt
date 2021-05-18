@@ -5,6 +5,8 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +19,7 @@ import ltu.m7019e.m7019e_miniproject.database.CharacterDatabaseDao
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentCharacterDetailBinding
 import ltu.m7019e.m7019e_miniproject.model.Character
 import ltu.m7019e.m7019e_miniproject.viewmodel.CharacterDetailViewModel
+import java.util.*
 
 class CharacterDetailFragment : Fragment() {
 
