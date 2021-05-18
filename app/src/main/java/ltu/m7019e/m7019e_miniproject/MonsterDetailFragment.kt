@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import ltu.m7019e.m7019e_miniproject.adapter.MonsterActionsAdapter
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentMonsterDetailBinding
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentMonsterSelectionBinding
 import ltu.m7019e.m7019e_miniproject.model.Monster
@@ -36,6 +37,14 @@ class MonsterDetailFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(MonsterDetailViewModel::class.java)
 
         viewModel.getMonsterDetails(binding)
+
+        val monsterActionsAdapter = MonsterActionsAdapter()
+        binding.monsterDetailActionsRv.adapter = monsterActionsAdapter
+        viewModel.monsterActionsList.observe(viewLifecycleOwner, { monsterActionsList ->
+               monsterActionsList?.let {
+                   monsterActionsAdapter.submitList(monsterActionsList)
+               }
+        })
 
         return binding.root
     }

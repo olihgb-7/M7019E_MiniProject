@@ -41,36 +41,15 @@ class MonsterDetailsResponse {
     @Json(name = "hit_points")
     var hitPoints: String = ""
 
-    @Json(name = "speed")
-    lateinit var speed: Speed
-
     @Json(name = "armor_class")
     var armorClass: String = ""
 
     @Json(name = "actions")
-    var actions: List<Action> = listOf()
-
+    var actions: List<MonsterAction> = listOf()
 }
 
 @JsonClass(generateAdapter = true)
-data class Action(
-    var damage: List<Damage>,
+data class MonsterAction(
+    var desc: String,
     var name: String,
-)
-
-@JsonClass(generateAdapter = true)
-data class Damage(
-    var damage_dice: String,
-    var damage_type: DamageType
-)
-
-@JsonClass(generateAdapter = true)
-data class DamageType(
-    var name: String
-)
-
-@JsonClass(generateAdapter = true)
-data class Speed(
-    var swim: String,
-    var walk: String
 )

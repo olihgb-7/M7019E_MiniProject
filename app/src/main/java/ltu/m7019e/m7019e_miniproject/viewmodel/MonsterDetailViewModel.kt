@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 import ltu.m7019e.m7019e_miniproject.databinding.FragmentMonsterDetailBinding
+import ltu.m7019e.m7019e_miniproject.model.Character
+import ltu.m7019e.m7019e_miniproject.network.MonsterAction
 import ltu.m7019e.m7019e_miniproject.network.MonsterDetailsResponse
 import java.lang.Exception
 import java.lang.IllegalArgumentException
@@ -11,6 +13,12 @@ import java.lang.IllegalArgumentException
 class MonsterDetailViewModel(monsterIndex: String, application: Application) : AndroidViewModel(application) {
 
     private var monsterIndex = monsterIndex
+
+    private val _monsterActionsList = MutableLiveData<List<MonsterAction>>()
+    val monsterActionsList: LiveData<List<MonsterAction>>
+        get() {
+            return _monsterActionsList
+        }
 
     init {}
 
@@ -32,8 +40,9 @@ class MonsterDetailViewModel(monsterIndex: String, application: Application) : A
                 binding.monsterDetailCharisma.text = monsterDetailsResponse.charisma
 
                 binding.monsterDetailHealtPoints.text = monsterDetailsResponse.hitPoints
-                binding.monsterDetailSpeed.text = monsterDetailsResponse.speed.walk
                 binding.monsterDetailArmourClass.text = monsterDetailsResponse.armorClass
+
+                _monsterActionsList.value = monsterDetailsResponse.actions
             }
             catch (e: Exception) {
 
