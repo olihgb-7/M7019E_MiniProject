@@ -1,5 +1,6 @@
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import ltu.m7019e.m7019e_miniproject.network.MonsterDetailsResponse
 import ltu.m7019e.m7019e_miniproject.network.MonstersResponse
 import ltu.m7019e.m7019e_miniproject.utils.Constants
 import okhttp3.OkHttpClient
@@ -7,6 +8,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
+import retrofit2.http.Url
 import java.util.concurrent.TimeUnit
 
 /**
@@ -48,6 +51,12 @@ private val monsterListRetrofit = Retrofit.Builder()
 interface DnDApiService {
     @GET("monsters")
     suspend fun getMonsters(): MonstersResponse
+
+    @GET
+    suspend fun getMonsterDetails(
+            @Url
+            monsterIndex: String
+    ): MonsterDetailsResponse
 }
 
 object DnDApi {

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="ltu.m7019e.m7019e_miniproject.viewmodel.MonsterDetailViewModel" />
     </data>
 
     <FrameLayout
@@ -27,7 +29,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/monster_name" />
+                tools:text="@string/monster_name"/>
 
             <TextView
                 android:id="@+id/monster_detail_size"
