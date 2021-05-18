@@ -25,11 +25,10 @@ class PlayersHandbookViewModel(application: Application) : AndroidViewModel(appl
     }
 
     fun setupWebView(binding: FragmentPlayersHandbookBinding) {
-
         _dataFetchStatus.value = DataFetchStatus.DONE
         binding.playersHandbookWv.settings.javaScriptEnabled = true
         binding.playersHandbookWv.settings.pluginState = WebSettings.PluginState.ON
-        binding.playersHandbookWv.loadUrl(Constants.PLAYERS_HANDBOOK_TOYTUBE_URL)
+        binding.playersHandbookWv.loadUrl(Constants.PLAYERS_HANDBOOK_YOUTUBE_URL)
         binding.playersHandbookWv.webViewClient = object : WebViewClient() {
             override fun onReceivedError(view: WebView, errorCode: Int, description: String, failingUrl: String) {
                 binding.playersHandbookWv.loadUrl("about:blank")
