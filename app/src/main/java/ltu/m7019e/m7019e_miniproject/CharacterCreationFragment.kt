@@ -3,6 +3,7 @@ package ltu.m7019e.m7019e_miniproject
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -69,12 +70,13 @@ class CharacterCreationFragment : Fragment() {
     }
 
 
+    @ExperimentalStdlibApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.characterCreationRace.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View, position: Int, id: Long) {
-                var raceIndex = binding.characterCreationRace.selectedItem.toString().decapitalize()
+                var raceIndex = binding.characterCreationRace.selectedItem.toString().lowercase()
                 viewModel.getCharacterRaceAlignment(raceIndex)
             }
 
